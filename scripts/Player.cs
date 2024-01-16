@@ -29,7 +29,6 @@ public partial class Player : CharacterBody2D
     {
         Direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
         Velocity = Direction.Normalized() * Speed;
-        GD.Print(Velocity);
 
         MoveAndSlide();
     }
