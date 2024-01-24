@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3tk1xh240xdl"]
+
+[ext_resource type="Script" path="res://scripts/GameController.cs" id="1_2enkn"]
+[ext_resource type="PackedScene" uid="uid://ru6yyif3lowr" path="res://scenes/World.tscn" id="2_o2sgr"]
+[ext_resource type="PackedScene" uid="uid://bipei224c0jik" path="res://scenes/Cliff.tscn" id="3_sn8o8"]
+
+[node name="GameController" type="Node2D"]
+script = ExtResource("1_2enkn")
+WorldScene = ExtResource("2_o2sgr")
+CliffScene = ExtResource("3_sn8o8")

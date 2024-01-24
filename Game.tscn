@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://pl6k68k0bj4c"]
+
+[ext_resource type="PackedScene" uid="uid://ru6yyif3lowr" path="res://scenes/World.tscn" id="1_fyt3h"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_w451d"]
+
+[sub_resource type="Shader" id="Shader_gd574"]
+code = "shader_type canvas_item;
+
+void vertex() {
+	// Called for every vertex the material is visible on.
+}
+
+void fragment() {
+	// Called for every pixel the material is visible on.
+}
+
+//void light() {
+	// Called for every pixel for every light affecting the CanvasItem.
+	// Uncomment to replace the default light processing function with this one.
+//}
+"
+script = SubResource("CSharpScript_w451d")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pdr7p"]
+shader = SubResource("Shader_gd574")
+
+[node name="Game" type="Node"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_pdr7p")
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 145.0
+offset_bottom = 82.0
+scale = Vector2(8, 8)
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(146, 83)
+render_target_update_mode = 4
+
+[node name="World" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_fyt3h")]
