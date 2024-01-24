@@ -743,6 +743,14 @@ motion_mode = 1
 platform_on_leave = 2
 script = ExtResource("1_76vhc")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+limit_smoothed = true
+position_smoothing_speed = 15.0
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(-1, 1)
 texture = ExtResource("1_ilsjm")
@@ -790,14 +798,6 @@ position = Vector2(1, 7)
 shape = SubResource("CircleShape2D_xc3bh")
 
 [node name="AttackCooldown" type="Timer" parent="."]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
-process_callback = 0
-limit_smoothed = true
-rotation_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 modulate = Color(0.164706, 1, 0.152941, 1)
